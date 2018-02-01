@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -9,14 +10,15 @@ import sys
 import os
 from slackviewer.main import main as slackviewer
 
-domain = 'http://{team_name}.slack.com'
-downloads = '' # ~/Downloads
+domain = 'http://{}.slack.com'.format(os.environ['SLACK_TEAM'])
+downloads = os.environ['SLACK_BACKUP_DIR'] # ~/Downloads
 slackviewer_path = '$(which slack-export-viewer)'
-username = ''
-password = ''
+username = os.environ['SLACK_USER']
+password = os.environ['SLACK_PASS']
+
+browser = webdriver.Chrome()
 
 try:
-    browser = webdriver.Chrome()
     browser.get('{}/services/export'.format(domain))
     browser.implicitly_wait(10)
 

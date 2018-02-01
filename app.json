@@ -1,0 +1,44 @@
+{
+  "name": "Slack Backup",
+  "description": "Periodically backup your slack chat logs, and view them on a web server",
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-google-chrome.git"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-chromedriver.git"
+    },
+    {
+      "url": "heroku/python"
+    }
+  ]
+  "repository": "https://github.com/sp4ghet/slack-backup",
+  "keywords": ["python", "selenium", "slack" ],
+  "addons": [],
+  "env": {
+    "SLACK_USER": {
+      "description": "Username of slack user with permissions to read from slack.",
+      "generator": "secret"
+    },
+    "SLACK_PASS": {
+      "description": "Password for the username",
+      "generator": "secret"
+    },
+    "SLACK_TEAM": {
+      "description": "Team name for slack team",
+      "generator": "secret"
+    },
+    "SLACK_BACKUP_DIR": {
+      "description": "Directory to backup files into, if you don't know, default to ~/Downloads",
+      "generator": "secret",
+      "value": "~/Downloads"
+    }
+  },
+  "environments": {
+    "test": {
+      "scripts": {
+        "test": "python export-slack.py"
+      }
+    }
+  }
+}
