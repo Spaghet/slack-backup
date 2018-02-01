@@ -17,20 +17,16 @@
   "addons": [],
   "env": {
     "SLACK_USER": {
-      "description": "Username of slack user with permissions to read from slack.",
-      "generator": "secret"
+      "description": "Username of slack user with permissions to read from slack."
     },
     "SLACK_PASS": {
-      "description": "Password for the username",
-      "generator": "secret"
+      "description": "Password for the username"
     },
     "SLACK_TEAM": {
-      "description": "Team name for slack team",
-      "generator": "secret"
+      "description": "Team name for slack team"
     },
     "SLACK_BACKUP_DIR": {
       "description": "Directory to backup files into, if you don't know, default to ~/Downloads",
-      "generator": "secret",
       "value": "~/Downloads"
     }
   },
