@@ -5,14 +5,11 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-import glob
 import sys
 import os
-from slackviewer.main import main as slackviewer
 
 domain = 'http://{}.slack.com'.format(os.environ['SLACK_TEAM'])
 downloads = os.environ['SLACK_BACKUP_DIR'] # ~/Downloads
-slackviewer_path = '$(which slack-export-viewer)'
 username = os.environ['SLACK_USER']
 password = os.environ['SLACK_PASS']
 
@@ -50,18 +47,8 @@ try:
     latest_link = table.find_elements_by_tag_name('td')[2].find_element_by_tag_name('a')
     latest_link.click()
 
-    files = glob.glob('{}/*export*.zip'.format(downloads))
-    newest = max(files, key=os.path.getctime)
-    print(newest)
-
-    sys.argv[0] = slackviewer_path
-    sys.argv.append("-z")
-    sys.argv.append(newest)
-    slackviewer()
-
-    browser.quit()
     print('done')
-except Exception as e:
-    print(e)
-    browser.quit()
-    pass
+except:
+    browser.close()
+
+browser.close()

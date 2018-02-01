@@ -1,1 +1,2 @@
-web: python export-slack.py
+web: python slack-viewer.py
+worker: python fetch-messages.py
