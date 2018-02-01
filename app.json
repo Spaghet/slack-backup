@@ -14,7 +14,9 @@
   ],
   "repository": "https://github.com/sp4ghet/slack-backup",
   "keywords": ["python", "selenium", "slack" ],
-  "addons": [],
+  "addons": [
+    "scheduler:free"
+  ],
   "env": {
     "SLACK_USER": {
       "description": "Username of slack user with permissions to read from slack."
