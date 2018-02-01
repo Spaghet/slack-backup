@@ -11,7 +11,7 @@
     {
       "url": "heroku/python"
     }
-  ]
+  ],
   "repository": "https://github.com/sp4ghet/slack-backup",
   "keywords": ["python", "selenium", "slack" ],
   "addons": [],
