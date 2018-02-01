@@ -16,9 +16,11 @@ password = os.environ['SLACK_PASS']
 browser = webdriver.Chrome()
 
 try:
+    print('opening page')
     browser.get('{}/services/export'.format(domain))
     browser.implicitly_wait(10)
 
+    print('logging in')
     username_elem = browser.find_element_by_id('email')
     password_elem = browser.find_element_by_id('password')
     submit_elem = browser.find_element_by_id('signin_btn')
