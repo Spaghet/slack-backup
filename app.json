@@ -15,7 +15,7 @@
   "repository": "https://github.com/sp4ghet/slack-backup",
   "keywords": ["python", "selenium", "slack" ],
   "addons": [
-    "scheduler:free"
+    "scheduler"
   ],
   "env": {
     "SLACK_USER": {
