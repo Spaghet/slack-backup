@@ -18,7 +18,7 @@ for objects in s3.Bucket(bucket_name).objects.filter():
 newest_s3_filename = max(filenames, key=lambda x: x['last_modified'])
 
 try:
-    s3.Bucket(bucket_name).download_file(newest_s3_filename, backup_filename)
+    s3.Bucket(bucket_name).download_file(newest_s3_filename['key'], backup_filename)
 except botocore.exceptions.ClientError as e:
     if e.response['Error']['Code'] == "404":
         print("The object does not exist.")
