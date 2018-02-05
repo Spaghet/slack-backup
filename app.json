@@ -32,7 +32,7 @@
       "value": "~/Downloads"
     },
     "AWS_ACCESS_KEY_ID": {
-      "description": "AWS IAM access key information to store the backup zipfile",
+      "description": "AWS IAM access key information to store the backup zipfile"
     },
     "AWS_SECRET_ACCESS_KEY": {
       "description": "AWS IAM secret access key information to store the backup zipfile"
