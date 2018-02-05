@@ -4,6 +4,7 @@ import sys
 import os
 from slackviewer.main import main as slackviewer
 import boto3
+import botocore
 
 # Get latest backup zip file from s3
 s3 = boto3.resource('s3')
@@ -37,4 +38,6 @@ sys.argv.append(backup_filename)
 sys.argv.append('-p')
 sys.argv.append(port)
 sys.argv.append('--no-browser')
+sys.argv.append('--ip')
+sys.argv.append('0.0.0.0')
 slackviewer()
