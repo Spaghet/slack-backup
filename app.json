@@ -30,6 +30,16 @@
     "SLACK_BACKUP_DIR": {
       "description": "Directory to backup files into, if you don't know, default to ~/Downloads",
       "value": "~/Downloads"
+    },
+    "AWS_ACCESS_KEY_ID": {
+      "description": "AWS IAM access key information to store the backup zipfile",
+    },
+    "AWS_SECRET_ACCESS_KEY": {
+      "description": "AWS IAM secret access key information to store the backup zipfile"
+    },
+    "BUCKET_NAME": {
+      "description": "Name of the S3 bucket to store the backup zipfile. Needs to be pre-existing. Make using AWS CLI or web interface.",
+      "value": "slack-backup"
     }
   },
   "environments": {
